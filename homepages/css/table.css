@@ -1,0 +1,197 @@
+/* =======================
+   기본 스타일
+======================== */
+/* =======================
+   input-wrap 스타일
+======================== */
+.input-wrap {
+  width: 100%; /* 부모 요소에 맞게 너비 조정 */
+  max-width: 1000px; /* 최대 너비 1000px */
+  margin: 20px auto;
+  padding: 25px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff, #eaeaea);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* padding과 border 포함 */
+}
+
+.input-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* =======================
+   main-wrap 스타일
+======================== */
+.main-wrap {
+  width: 100%; /* 부모 요소에 맞게 너비 조정 */
+  max-width: 1000px; /* 최대 너비 1000px */
+  margin: 30px auto;
+  padding: 25px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff, #f5f5f5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box; /* padding과 border 포함 */
+}
+
+/* =======================
+   input 스타일
+======================== */
+.input-wrap input {
+  width: 100%; /* 부모 요소의 너비에 맞게 꽉 차도록 설정 */
+  box-sizing: border-box; /* padding과 border가 포함되도록 설정 */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* =======================
+   수정된 입력창(수정 시)에 대한 스타일
+======================== */
+.ininput {
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.ininput:focus {
+  border-color: #000 !important;
+  outline: none !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* =======================
+   버튼 스타일
+======================== */
+.input-wrap button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #333, #000);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-wrap button:hover {
+  background: linear-gradient(90deg, #000, #222);
+  transform: translateY(-2px);
+}
+
+.input-wrap button:disabled {
+  opacity: 0.2;
+}
+
+/* =======================
+   테이블 스타일
+======================== */
+.tablewrap {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+/* 테이블 셀 스타일 */
+.tablewrap th,
+.tablewrap td {
+  border: 1px solid #333;
+  text-align: center;
+  padding: 8px;
+}
+
+.tablewrap th {
+  background: linear-gradient(90deg, #000, #333);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* =======================
+   버튼 (수정 및 삭제) 스타일
+======================== */
+.buttonb {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #333, #444);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.buttonb:hover {
+  background: linear-gradient(90deg, #000, #333);
+  transform: translateY(-2px);
+}
+
+.buttonb:active {
+  transform: translateY(2px);
+}
+
+.buttonb:disabled {
+  background: #666;
+  opacity: 0.5;
+}
+/* =======================
+   p 태그 스타일
+======================== */
+.input-wrap p {
+  font-size: 13px; /* 글씨 크기를 작게 설정 */
+  color: #2c0905; /* 붉은 색 (약간의 빨간색 계열) */
+  margin: 5px 0; /* 위 아래 간격 조정 */
+  line-height: 1.5; /* 텍스트 수직 간격 조정 */
+  vertical-align: middle; /* 수직 가운데 정렬 */
+  display: inline-block; /* block처럼 보이게 하되, 내용에 맞게 크기 조정 */
+  width: 100%; /* 부모 요소의 너비에 맞게 확장 */
+  font-weight: bold;
+}
+.img {
+  width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+}
+.none {
+  display: none;
+}
+.input-box {
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  display: flex;
+  line-height: 2rem !important;
+  padding: 0.2em 0.4em !important;
+  gap: 50px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.input-inbox {
+  height: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="radio"] {
+  vertical-align: -10px !important;
+}

@@ -1,0 +1,65 @@
+.none {
+  display: none;
+}
+@font-face {
+  font-family: "zua";
+  src: url("../font/BMJUA_ttf.ttf");
+}
+.main-wrap {
+  max-width: 1280px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* 기본적으로 왼쪽 정렬 */
+  font-family: "zua";
+}
+.img {
+  width: 400px;
+  aspect-ratio: 1/1;
+}
+/* .box {
+  font-size: 16px;
+} */
+.box-wrap {
+  background-color: rgb(230, 230, 230);
+  width: 90%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: inset 0px 0px 10px #666;
+}
+/* .box {
+
+} */
+.img {
+  border-radius: 16px;
+  border: solid 10px black;
+}
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.age {
+  margin: 30px 0;
+}
+.history {
+  margin: 20px 0;
+}
+.damgii {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 18px;
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+}
+.damgii:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
