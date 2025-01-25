@@ -5,16 +5,20 @@
 
 .main-wrap {
   max-width: 1280px;
+  width: 100%;
   margin: 20px auto;
+  display: flex;
   justify-content: center;
+  align-content: center;
+  position: relative;
 }
 
 .box {
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 400px;
-  width: 400px; /* 기본적으로 두 개씩 쌓이도록 크기 설정 */
+  max-width: 800px;
+  width: 100%; /* 기본적으로 두 개씩 쌓이도록 크기 설정 */
   min-width: 322px;
   padding: 20px;
   background-color: black;
@@ -55,16 +59,14 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  position: absolute; /* 절대 위치 설정 */
+  /* 절대 위치 설정 */
   font-family: "zua";
 }
 
-.info {
-  right: 20%;
-  bottom: 10%;
-}
-
-.remove {
+.btnBox2 {
+  position: absolute;
+  display: flex;
+  gap: 20px;
   right: 5%;
   bottom: 10%;
 }
@@ -144,18 +146,17 @@
 }
 
 .main-container {
-  background-color: rgb(230, 230, 230);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  justify-content: flex-start;
-  margin: 20 auto;
   padding: 100px;
-  border-radius: 16px;
+  /* width: 100%; */
+  border-radius: 24px !important;
   box-shadow: inset 0px 0px 10px #666;
+  background-color: rgb(230, 230, 230);
   font-family: "zua";
-  position: relative;
-  min-width: 357px;
+  width: 100%;
 }
 
 .tung {

@@ -4,12 +4,13 @@
 }
 body {
   background-color: whitesmoke;
+  overflow: auto;
 }
 .header {
   height: 60px;
-  width: 100%;
+  width: calc(100% - 40px); /* 화면 좌우 여백 조정 */
   max-width: 1280px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 15px 20px;
   background-color: black;
   color: white;
@@ -20,8 +21,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 24px;
   font-weight: bolder;
-  z-index: 2;
+  z-index: 999;
   font-family: "zua";
+  top: 0;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  position: relative; /* 기본 상태 */
 }
 
 .header div {
@@ -73,10 +77,16 @@ body {
   text-transform: uppercase;
 }
 
+/* fixed 상태 */
 .fixed {
   position: fixed;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 5px;
+  transform: translateX(-50%);
+  width: calc(100% - 40px); /* 화면 좌우 여백 맞추기 */
+  max-width: 1280px;
+  opacity: 0.8;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .dropdown {
@@ -99,13 +109,14 @@ body {
 }
 
 li {
-  margin-top: 20px;
+  margin-top: 10px;
   white-space: nowrap;
-  padding: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 li:hover {
-  background-color: grey;
+  background-color: rgb(207, 202, 202);
   border-radius: 8px;
   transform: scale(1.01);
   cursor: pointer;
@@ -113,7 +124,13 @@ li:hover {
 
 .dropdown:hover .dropdownmenu {
   display: block;
-  z-index: 10;
+  z-index: 999;
+}
+
+@media (max-width: 1180px) {
+  .header {
+    justify-content: space-around;
+  }
 }
 
 /* 반응형 스타일 */
@@ -143,7 +160,6 @@ li:hover {
 @media (max-width: 480px) {
   /* iPhone SE 사이즈 */
   .header {
-    padding: 8px 10px; /* 여백을 더 줄여서 화면 최적화 */
     font-size: 18px; /* 모바일에서 폰트 크기 더 줄이기 */
   }
 

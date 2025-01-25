@@ -29,16 +29,15 @@ function createbox(data) {
         <div class="subbox">
           <div>${item.name}</div>
           <div class = "price${item.id}">${item.age * item.cnt}원</div>
-          <div class = "plusminus"><img onclick = "plus(${index})" class = "icon" src ="../daiso/addicon.png" alt = "..."/><span class ="sp${
-        item.id
-      }">${
-        item.cnt
-      }</span><img onclick = "minus(${index})"class = "icon" src ="../daiso/removeicon.png" alt = "..."/>
-        </div>
-      <button class = "info" onclick = "information(
-      ${
-        item.id
-      })">정보</button><button class = "remove" onclick = "removeBtn(${index})">삭제</button></div>`;
+          <div class = "plusminus">
+          <img onclick = "plus(${index})" class = "icon" src ="../daiso/addicon.png" alt = "..."/>
+          <span class ="sp${item.id}">${item.cnt}</span>
+          <img onclick = "minus(${index})" class = "icon" src ="../daiso/removeicon.png" alt = "..."/>
+        </div><div class = "btnBox2">
+      <button class = "info" onclick = "information(${item.id})">정보</button>
+      <button class = "remove" onclick = "removeBtn(${index})">삭제</button>
+      </div>
+      </div>`;
     });
     mainwrap.innerHTML += `<div class = "btnBox"><div class = "removeCart" onclick = "removeCart()">장바구니 비우기</div><div class = "payment" onclick = "payment()">결제하기</div>`;
   } else mainwrap.innerHTML = `<div class = "tung">장바구니가 비었어요.</div>`;

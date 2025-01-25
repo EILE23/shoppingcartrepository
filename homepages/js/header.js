@@ -9,16 +9,18 @@ function login() {
   });
 }
 // scroll 헤더 고정
+const height = window.outerHeight;
+console.log(height);
+if (height > 815) {
+  let header = document.querySelector(".header");
+  window.onscroll = function () {
+    let headerTop = header.offsetTop;
+    let sp = window.scrollY;
 
-let header = document.querySelector(".header");
-let headerTop = header.offsetTop;
-
-window.addEventListener("scroll", function () {
-  let sp = window.scrollY;
-
-  if (sp >= headerTop) {
-    header.classList.add("fixed");
-  } else {
-    header.classList.remove("fixed");
-  }
-});
+    if (sp > headerTop) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  };
+}
