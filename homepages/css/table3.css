@@ -1,18 +1,21 @@
+@font-face {
+  font-family: "zua";
+  src: url("../font/BMJUA_ttf.ttf");
+}
+
 .main-wrap {
   max-width: 1280px;
   margin: 20px auto;
   justify-content: center;
 }
-@font-face {
-  font-family: "zua";
-  src: url("../font/BMJUA_ttf.ttf");
-}
+
 .box {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   align-items: center;
+  max-width: 400px;
   width: 400px; /* 기본적으로 두 개씩 쌓이도록 크기 설정 */
+  min-width: 322px;
   padding: 20px;
   background-color: black;
   color: white;
@@ -21,7 +24,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   gap: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  position: relative; /* 절대 위치 요소들이 박스를 기준으로 정렬되도록 */
 }
 
 .box:hover {
@@ -52,17 +55,20 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  position: absolute;
+  position: absolute; /* 절대 위치 설정 */
   font-family: "zua";
 }
+
 .info {
   right: 20%;
   bottom: 10%;
 }
+
 .remove {
   right: 5%;
   bottom: 10%;
 }
+
 .info:hover,
 .remove:hover {
   background-color: black;
@@ -82,12 +88,61 @@
 .none {
   display: none;
 }
+
 /* 모바일이나 화면 크기가 작을 때 1개씩 표시 */
 @media (max-width: 768px) {
   .box {
     width: 100%; /* 화면이 작으면 1개씩 100% 크기로 */
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .imgshop {
+    width: 80px; /* 모바일에서 이미지 크기 줄이기 */
+  }
+
+  .subbox {
+    gap: 8px;
+  }
+
+  .info,
+  .remove {
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
 }
+
+/* 더 작은 화면에서 1개씩 보여주기 (예: iPhone SE) */
+@media (max-width: 480px) {
+  .box {
+    width: 100%; /* 화면에 1개씩 꽉 차게 보여주기 */
+    flex-direction: column; /* 세로로 쌓이도록 */
+    align-items: center; /* 중앙 정렬 */
+    padding: 12px;
+    height: auto; /* 높이 자동 조정 */
+  }
+
+  .imgshop {
+    width: 60px; /* 이미지 크기 더 줄이기 */
+  }
+
+  .info,
+  .remove {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .subbox {
+    gap: 6px;
+  }
+
+  .remove {
+    position: static; /* 버튼을 더 자연스럽게 배치 */
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
 .main-container {
   background-color: rgb(230, 230, 230);
   display: flex;
@@ -99,22 +154,28 @@
   border-radius: 16px;
   box-shadow: inset 0px 0px 10px #666;
   font-family: "zua";
+  position: relative;
+  min-width: 357px;
 }
+
 .tung {
   font-family: "zua";
   font-size: 30px;
   font-weight: bold;
 }
+
 .icon {
   width: 30px;
   aspect-ratio: 1/1;
 }
+
 .icon:hover {
   cursor: pointer;
   background-color: #666;
   border-radius: 50%;
   box-shadow: inset 0px 0px 5px #ffffff;
 }
+
 .plusminus {
   display: flex;
   text-align: center;
@@ -123,4 +184,56 @@
   position: absolute;
   bottom: 60px;
   right: 7%;
+}
+
+.btnBox {
+  display: flex;
+  position: absolute;
+  gap: 10px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.removeCart {
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: inset 0px 0px 5px #202020;
+}
+
+.payment {
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: inset 0px 0px 5px #202020;
+}
+
+.removeCart:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.payment:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+/* 추가적인 모바일 최적화 */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .btnBox {
+    flex-direction: column;
+    bottom: 10px;
+  }
+
+  .removeCart,
+  .payment {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

@@ -1,12 +1,9 @@
-/* body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: white;
-  color: black;
-} */
 @font-face {
   font-family: "zua";
   src: url("../font/BMJUA_ttf.ttf");
+}
+body {
+  background-color: whitesmoke;
 }
 .header {
   height: 60px;
@@ -44,12 +41,14 @@
   align-items: center;
   gap: 10px;
 }
+
 .header .icon:hover {
   border-radius: 50%;
   background-color: rgb(65, 63, 63);
   cursor: pointer;
   transform: scale(1.01);
 }
+
 .upper {
   background-color: white;
   color: black;
@@ -73,15 +72,18 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 .fixed {
   position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .dropdown {
   position: relative;
   font-size: 20px;
 }
+
 .dropdownmenu {
   position: absolute;
   top: 10px;
@@ -95,18 +97,75 @@
   color: black;
   border-radius: 16px;
 }
+
 li {
   margin-top: 20px;
   white-space: nowrap;
   padding: 5px;
 }
+
 li:hover {
   background-color: grey;
   border-radius: 8px;
   transform: scale(1.01);
   cursor: pointer;
 }
+
 .dropdown:hover .dropdownmenu {
   display: block;
   z-index: 10;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px; /* 모바일에서 여백을 줄여서 화면 최적화 */
+    font-size: 20px; /* 작은 화면에서 폰트 크기 줄이기 */
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .header .iconbox {
+    gap: 8px; /* 아이콘 간격 줄이기 */
+    justify-content: space-around; /* 아이콘들이 중앙에 위치하도록 */
+  }
+
+  .dropdownmenu {
+    width: 200px; /* 드롭다운 메뉴의 너비를 줄여서 화면에 맞게 */
+    padding: 15px; /* 드롭다운 메뉴 내 여백 줄이기 */
+  }
+
+  .upper {
+    font-size: 0.8rem; /* 모바일에서 버튼 크기 줄이기 */
+  }
+}
+
+@media (max-width: 480px) {
+  /* iPhone SE 사이즈 */
+  .header {
+    padding: 8px 10px; /* 여백을 더 줄여서 화면 최적화 */
+    font-size: 18px; /* 모바일에서 폰트 크기 더 줄이기 */
+  }
+
+  .header .icon {
+    width: 25px;
+    height: 25px; /* 아이콘 크기 줄이기 */
+  }
+
+  .header .iconbox {
+    gap: 5px; /* 아이콘 간격 더 줄이기 */
+  }
+
+  .header div:nth-child(3) {
+    font-size: 1.5rem; /* 텍스트 크기 줄이기 */
+  }
+
+  .dropdownmenu {
+    width: 180px; /* 드롭다운 메뉴의 너비를 더 줄여서 화면 최적화 */
+    padding: 10px; /* 드롭다운 메뉴 내 여백 더 줄이기 */
+  }
+
+  .upper {
+    font-size: 0.75rem; /* 버튼 크기 더 줄이기 */
+  }
 }

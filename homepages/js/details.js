@@ -18,7 +18,7 @@ function createmainwrap(item) {
   let numbering = Number(item.age).toLocaleString();
   mainwrap.innerHTML = `<div class ="box-wrap"><div class = "box">
   <img class = "img"src = "${item.img}" alt = "..."/>
-  <div class = "name">${item.name}</div><div class = "history">${item.history}</div><div class = "age">${numbering}원</div>
+  <div class = "name">${item.name}</div><div class = "history"><br>상품설명<br><br>${item.history}</div><div class = "age"><br>가격 :  ${numbering}원</div>
   </div><div class = "damgii" onclick = "damgiibtn(${item.id})">담기</div></div>`;
 }
 function damgiibtn(item) {
@@ -70,19 +70,6 @@ function shoppingnum(number) {
 }
 function shoppingbtn() {
   window.location.href = "shoppingcart.html";
-}
-let header = document.querySelector(".header");
-let headerTop = header.offsetTop;
-if (saveData.length >= 8) {
-  window.addEventListener("scroll", function () {
-    let sp = window.scrollY;
-
-    if (sp >= headerTop) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
-    }
-  });
 }
 
 const dropdownmenu = document.querySelector(".dropdownmenu");

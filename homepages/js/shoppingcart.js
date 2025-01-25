@@ -1,5 +1,5 @@
 const saveData = JSON.parse(window.localStorage.getItem("data")) || [];
-const shopping = JSON.parse(window.localStorage.getItem("shopping")) || [];
+let shopping = JSON.parse(window.localStorage.getItem("shopping")) || [];
 
 createbox(shopping);
 
@@ -35,10 +35,12 @@ function createbox(data) {
         item.cnt
       }</span><img onclick = "minus(${index})"class = "icon" src ="../daiso/removeicon.png" alt = "..."/>
         </div>
-      <button class = "info" onclick = "information(${
+      <button class = "info" onclick = "information(
+      ${
         item.id
       })">정보</button><button class = "remove" onclick = "removeBtn(${index})">삭제</button></div>`;
     });
+    mainwrap.innerHTML += `<div class = "btnBox"><div class = "removeCart" onclick = "removeCart()">장바구니 비우기</div><div class = "payment" onclick = "payment()">결제하기</div>`;
   } else mainwrap.innerHTML = `<div class = "tung">장바구니가 비었어요.</div>`;
 }
 
@@ -53,27 +55,42 @@ function removeBtn(index) {
   createbox(Data);
 }
 
+function removeCart() {
+  shopping = [];
+  window.localStorage.setItem("shopping", JSON.stringify(shopping));
+  createbox(shopping);
+}
 // 상세페이지 이동
 function information(content) {
   window.location.href = `details.html?id=${content}`;
 }
 
-// scroll 헤더 고정
-
-let header = document.querySelector(".header");
-let headerTop = header.offsetTop;
-
-if (saveData.length >= 8) {
-  window.addEventListener("scroll", function () {
-    let sp = window.scrollY;
-
-    if (sp >= headerTop) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
+function payment() {
+  let price = 0;
+  shopping.forEach((item) => {
+    for (let j = 0; j < item.cnt; j++) {
+      price += Number(item.age);
+    }
+  });
+  Swal.fire({
+    title: `총합 ${price}원 결제할까요?`,
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "취소",
+    confirmButtonText: "결제",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "미구현 기능입니다.",
+        icon: "error",
+        draggable: true,
+      });
     }
   });
 }
+
 function plus(i) {
   const spanText = document.querySelector(`.sp${shopping[i].id}`);
   const divText = document.querySelector(`.price${shopping[i].id}`);

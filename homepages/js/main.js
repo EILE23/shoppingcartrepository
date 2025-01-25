@@ -2,7 +2,7 @@ let saveData = JSON.parse(window.localStorage.getItem("data")) || [];
 let shoppingcart = JSON.parse(window.localStorage.getItem("shopping")) || [];
 const querydata = new URLSearchParams(window.location.search);
 const ct = querydata.get("ct");
-if (saveData.length > 0) createbox(saveData, ct);
+if (saveData.length > 0) createbox(saveData, ct || "all");
 else {
   const mainwrap = document.querySelector(".boxbox");
   mainwrap.innerHTML = `데이터가 없어요`;
@@ -65,20 +65,4 @@ function shoppingbtn() {
 
 function shoppingnum(number) {
   document.querySelector(".circlenum").innerText = `${number}`;
-}
-
-// scroll 헤더 고정
-
-let header = document.querySelector(".header");
-let headerTop = header.offsetTop;
-if (saveData.length >= 8) {
-  window.addEventListener("scroll", function () {
-    let sp = window.scrollY;
-
-    if (sp >= headerTop) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
-    }
-  });
 }
