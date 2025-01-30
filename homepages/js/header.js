@@ -12,7 +12,7 @@ function login() {
 
 const height = window.outerHeight;
 console.log(height);
-if (height > 816) {
+if (height >= 816) {
   let header = document.querySelector(".header");
   window.onscroll = function () {
     let headerTop = header.offsetTop;

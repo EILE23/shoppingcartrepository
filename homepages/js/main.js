@@ -40,7 +40,7 @@ function createbox(data, value) {
       data.map((item) => {
         let numbering = Number(item.age).toLocaleString();
         mainwrap.innerHTML += `    <div class="test" onclick = "information(${item.id})">
-        <img src="${item.img}" alt="..." />
+            <div class = "imgbox"><img src="${item.img}" alt="..." /></div>
         <div>${item.name}</div>
         <div>${numbering}원</div>
      `;
@@ -59,7 +59,7 @@ function createbox(data, value) {
         if (item.category == value) {
           let numbering = Number(item.age).toLocaleString();
           mainwrap.innerHTML += `    <div class="test" onclick = "information(${item.id})">
-        <img src="${item.img}" alt="..." />
+        <div class = "imgbox"><img src="${item.img}" alt="..." /></div>
         <div>${item.name}</div>
         <div>${numbering}원</div>
      `;

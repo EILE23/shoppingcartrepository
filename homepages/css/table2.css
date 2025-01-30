@@ -32,11 +32,20 @@
 }
 
 .test img {
-  width: 150px;
+  width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 16px;
-}
 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.test .imgbox {
+  width: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.test img:hover {
+  transform: scale(1.09);
+}
 .damgi {
   background-color: white;
   color: black;
@@ -106,6 +115,7 @@
   white-space: nowrap;
   padding-bottom: 10px;
   max-width: 600px;
+  max-height: 300px;
   overflow: hidden;
 }
 .btn {
