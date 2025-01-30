@@ -21,6 +21,7 @@
   text-align: center;
   box-shadow: 5px 5px 3px #666;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "zua";
 }
 .test:hover {
   cursor: pointer;
@@ -88,15 +89,13 @@
   background-color: rgb(230, 230, 230);
   padding: 100px;
   border-radius: 24px !important;
+  width: 100%;
 }
 .boxboxbox {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 20px; /* 간격 줄이기 */
-  max-width: 1000px; /* 가로 크기 제한 */
-  margin: 0 auto; /* 중앙 정렬 */
-  min-height: 400px; /* 최소 높이 설정 */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  min-width: 100%; /* 좌우 크기 고정 */
 }
 .boxbtnbox {
   display: flex;
@@ -104,19 +103,95 @@
   gap: 20px;
   text-align: center;
   margin-bottom: 30px;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  max-width: 600px;
+  overflow: hidden;
 }
 .btn {
   background-color: #4a4848;
   padding: 10px;
+  width: 80px;
+  text-align: center;
   border-radius: 16px;
   color: white;
   font-family: "zua";
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .btn:hover {
   cursor: pointer;
   transform: scale(1.01);
 }
+
 .btnclick {
   background-color: black;
   color: white;
+}
+@media (max-width: 1280px) {
+  .test {
+    width: 200px;
+    height: 250px;
+  }
+  .boxboxbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개씩 정렬 */
+    gap: 20px; /* 간격 조절 */
+    max-width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+  .boxbox {
+    padding: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .test {
+    width: 200px;
+    height: 250px;
+  }
+  .boxboxbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4개씩 정렬 */
+    gap: 20px; /* 간격 조절 */
+    max-width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+  .boxbox {
+    padding: 80px;
+  }
+}
+@media (max-width: 768px) {
+  .test {
+    width: 160px;
+    height: 250px;
+  }
+  .boxboxbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 4개씩 정렬 */
+    gap: 20px; /* 간격 조절 */
+    max-width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+  .boxbox {
+    padding: 60px;
+  }
+  .boxbtnbox {
+    overflow: auto;
+    max-width: 400px;
+  }
+}
+@media (max-width: 360px) {
+  .test {
+    width: 160px;
+    height: 250px;
+  }
+  .boxboxbox {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 4개씩 정렬 */
+    gap: 20px; /* 간격 조절 */
+    max-width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+  .boxbox {
+    padding: 40px;
+  }
 }

@@ -106,5 +106,8 @@ function minus(i) {
     window.localStorage.setItem("shopping", JSON.stringify(shopping));
     spanText.innerHTML = `${shopping[i].cnt}`;
     divText.innerHTML = `${shopping[i].age * shopping[i].cnt}원`;
-  } else return;
+  } else {
+    alert("그만");
+    return;
+  }
 }
