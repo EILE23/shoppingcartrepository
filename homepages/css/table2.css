@@ -10,7 +10,7 @@
 .test {
   width: 200px;
   height: 230px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 16px;
   padding: 16px;
@@ -81,13 +81,42 @@
 }
 .boxbox {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 40px;
-  padding: 100px;
-  border-radius: 24px !important;
-  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   box-shadow: inset 0px 0px 10px #666;
   background-color: rgb(230, 230, 230);
+  padding: 100px;
+  border-radius: 24px !important;
+}
+.boxboxbox {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* 간격 줄이기 */
+  max-width: 1000px; /* 가로 크기 제한 */
+  margin: 0 auto; /* 중앙 정렬 */
+  min-height: 400px; /* 최소 높이 설정 */
+}
+.boxbtnbox {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.btn {
+  background-color: #4a4848;
+  padding: 10px;
+  border-radius: 16px;
+  color: white;
   font-family: "zua";
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.btnclick {
+  background-color: black;
+  color: white;
 }

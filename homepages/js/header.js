@@ -1,6 +1,7 @@
 function gohome() {
   window.location.href = `main.html?ct=${"all"}`;
 }
+
 function login() {
   Swal.fire({
     title: "미구현 기능입니다.",
@@ -8,10 +9,10 @@ function login() {
     draggable: true,
   });
 }
-// scroll 헤더 고정
+
 const height = window.outerHeight;
 console.log(height);
-if (height > 815) {
+if (height > 816) {
   let header = document.querySelector(".header");
   window.onscroll = function () {
     let headerTop = header.offsetTop;
