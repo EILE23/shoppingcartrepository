@@ -10,7 +10,7 @@
 
 #### 메인 페이지
 
-<img width = "600px" height = "400px"src = "./image/image-1.png" alt = "image">
+<img src = "./image/image-1.png" width = "600px" height = "400px"  alt = "image"></img>
 
 #### 상세 페이지
 
