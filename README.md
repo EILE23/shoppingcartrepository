@@ -82,6 +82,6 @@
 
 #### 외부 라이브러리
 
-<a href = "https://sweetalert2.github.io/"><img src ="https://github.com/user-attachments/assets/be60b41f-ea7f-442e-8533-bd68d99d1c5d" width: "200" height = "200"
+<a href = "https://sweetalert2.github.io/">
 
 </a>
