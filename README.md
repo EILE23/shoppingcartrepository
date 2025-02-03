@@ -1,6 +1,14 @@
-### 아이템 등록 후 아이템 게시 홈페이지
+## 아이템 등록 후 아이템 게시 홈페이지
 
 <hr/>
+<br><br>
+
+### 기술
+<span>
+<img src = "https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/>
+  <img src = "https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+  <img src = "https://img.shields.io/badge/CSS-663399?style=flat-square&logo=CSS&logoColor=white"/>
+</span>
 
 <br>
 
@@ -12,13 +20,19 @@
 
 ![alt text](./homepages/image/image-1.png)
 
+<br><br>
+
 #### 상세 페이지
 
 ![alt text](./homepages/image/image-8.png)
 
+<br><br>
+
 #### 장바구니
 
 ![alt text](./homepages/image/image-9.png)
+
+<br><br>
 
 #### 관리 페이지
 
@@ -36,10 +50,8 @@
 
 #### 관리 페이지에서 카테고리에 따라 아이템 등록 카테고리 별로 정리 (카테고리 명은 코드 내에서 변경 가능)
 
-<br><br>
-
 ![alt text](./homepages/image/image-1.png)
-
+<br><br>
 #### 게시물 등록
 
 <br><br>
