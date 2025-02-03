@@ -40,7 +40,7 @@ function damgiibtn(item) {
       let exist = false;
 
       // 카트에 담겨 있을경우
-      shoppingcart.map((x, i) => {
+      shoppingcart.map((x) => {
         if (x.id == item) {
           exist = true;
           x.cnt += 1;

@@ -9,7 +9,8 @@ body {
 .header {
   height: 60px;
   width: calc(100% - 40px); /* 화면 좌우 여백 조정 */
-  max-width: 1280px;
+  max-width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 15px 20px;
   background-color: black;
@@ -24,7 +25,8 @@ body {
   z-index: 999;
   font-family: "zua";
   top: 0;
-  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    max-width 0.5s ease-in-out;
   position: relative; /* 기본 상태 */
 }
 
@@ -89,7 +91,8 @@ body {
   width: calc(100% - 40px); /* 화면 좌우 여백 맞추기 */
   max-width: 1280px;
   opacity: 0.8;
-  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out,
+    opacity 0.5s ease-in-out max-width 0.5s ease-in-out;
 }
 
 .dropdown {
