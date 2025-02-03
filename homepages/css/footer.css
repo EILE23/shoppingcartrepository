@@ -1,0 +1,17 @@
+hr {
+  margin: 40px 0 20px;
+}
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+}
+.footerbox {
+  display: flex;
+  gap: 30px;
+}
+.footerbox span {
+  font-size: 14px;
+  font-weight: bolder;
+}
