@@ -99,6 +99,9 @@
 
 <hr/>
 
-#### 외부 라이브러리
 
-https://sweetalert2.github.io/
+#### 외부 라이브러리
+<br><br>
+<a href = "https://sweetalert2.github.io/">
+<img src = "https://github.com/user-attachments/assets/e3a8386c-8f37-4209-8977-e812648d90cd" width = "300px" height = "100px"/>
+</a>
