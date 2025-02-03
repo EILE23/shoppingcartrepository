@@ -58,7 +58,7 @@
 
 ![alt text](./homepages/image/image-2.png)
 
-**물품을 장바구니에 담고 (로컬 스트리지 사용) 해당 물품에 갯수 조절도 가능**
+**물품을 장바구니에 담고 (로컬 스트리지 사용) 해당 물품에 갯수 조절도 가능**<br>
 **로컬 스트리지 안에 데이터 수량도 같이 줄어들게끔**
 
 <br><br>
@@ -77,6 +77,10 @@
 
 ![alt text](./homepages/image/image-6.png)
 
+<hr>
+<br><br>
+
 #### 외부 라이브러리
 
-https://sweetalert2.github.io/
+<span style = "text-align = center font-weight = 700"><a href = "https://sweetalert2.github.io/"><img src = "https://github.com/user-attachments/assets/bce41db7-a401-44ec-b044-cb25b6ac2bba" width = "40" height = "40"/>
+</a>SweetAlert2</span>
