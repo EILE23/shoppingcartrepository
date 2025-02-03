@@ -17,14 +17,13 @@ body::-webkit-scrollbar {
 }
 .header {
   height: 60px;
-  max-width: 1280px;
   width: 100%;
   padding: 15px 20px;
   background-color: black;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 24px;
@@ -34,6 +33,13 @@ body::-webkit-scrollbar {
   top: 0;
   position: relative; /* 기본 상태 */
   transition: top 0.5s ease-in-out, width 0.5s ease-in-out;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  top: -5px;
+  transform: translateX(-50%);
+  opacity: 0.8;
+  z-index: 999;
 }
 
 .header div {
@@ -89,15 +95,15 @@ body::-webkit-scrollbar {
 }
 
 /* fixed 상태 */
-.fixed {
+/* .fixed {
   position: fixed;
-  width: 1280px;
+  width: 100%;
   left: 50%;
-  top: 5px;
+  top: -5px;
   transform: translateX(-50%);
   opacity: 0.8;
   z-index: 999;
-}
+}  */
 
 .dropdown {
   position: relative;

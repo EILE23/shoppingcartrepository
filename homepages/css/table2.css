@@ -58,7 +58,7 @@
   position: absolute;
   width: 30px;
   aspect-ratio: 1/1;
-  left: 10px;
+  left: 5px;
   bottom: 20px;
 }
 .test .hearticon:hover {
