@@ -82,6 +82,6 @@
 
 #### 외부 라이브러리
 
-<a href = "https://sweetalert2.github.io/">
-
+<a href = "https://sweetalert2.github.io/"><img src = "./homepages/image/logo-square.png" width = "100" height = "100">
 </a>
+
