@@ -42,7 +42,9 @@
 } */
 .img {
   border-radius: 16px;
-  border: solid 10px black;
+  border: solid 4px black;
+  margin: 20px;
+  margin-bottom: 50px;
 }
 
 .name {
