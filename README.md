@@ -82,5 +82,5 @@
 
 #### 외부 라이브러리
 
-<span style = "text-align = center font-weight = 700"><a href = "https://sweetalert2.github.io/"><img src = "https://github.com/user-attachments/assets/bce41db7-a401-44ec-b044-cb25b6ac2bba" width = "40" height = "40"/>
+<span style = "text-align = center font-weight = 700"><a href = "https://sweetalert2.github.io/"><img src = "https://github.com/user-attachments/assets/bce41db7-a401-44ec-b044-cb25b6ac2bba" width = "20" height = "20"/>
 </a>SweetAlert2</span>
