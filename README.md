@@ -1,4 +1,4 @@
-### 아이템 등록 후 아이템 게시 홈페이지
+## 아이템 등록 후 아이템 게시 홈페이지
 
 <hr/>
 
@@ -9,19 +9,19 @@
 <br>
 <br>
 
-#### 메인 페이지
+#### 1. 메인 페이지
 
 ![alt text](./homepages/image/image-1.png)
 
-#### 상세 페이지
+#### 2. 상세 페이지
 
 ![alt text](./homepages/image/image-8.png)
 
-#### 장바구니
+#### 3. 장바구니
 
 ![alt text](./homepages/image/image-9.png)
 
-#### 관리 페이지
+#### 4. 관리 페이지
 
 ![alt text](./homepages/image/image-10.png)
 
