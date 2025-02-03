@@ -2,6 +2,10 @@
 
 <hr/>
 
+### 기술
+<span>
+<img src="https://img.shields.io/badge/javascript-#F7DF1E?style=for-the-badge&logo=javascript&logoColor=yellow" style="height:24px">
+<span/>
 <br>
 
 ### 페이지별 정리
