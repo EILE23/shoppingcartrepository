@@ -1,9 +1,10 @@
 const saveData = JSON.parse(window.localStorage.getItem("data")) || [];
 let shoppingcart = JSON.parse(window.localStorage.getItem("shopping")) || [];
 const querydata = new URLSearchParams(window.location.search);
+// query 받아오기
 const id = querydata.get("id");
 
-let iddata = "";
+let iddata = ""; // 받아온 값이 id와 같으면 데이터가 들어갈 함수
 if (saveData) {
   saveData.map((item) => {
     if (item.id == id) {
@@ -13,6 +14,8 @@ if (saveData) {
   createmainwrap(iddata);
   shoppingnum(shoppingcart.length);
 }
+
+// 가져온 데이터로 아이템 만드는 함수
 function createmainwrap(item) {
   const mainwrap = document.querySelector(".main-wrap");
   let numbering = Number(item.age).toLocaleString();
@@ -21,6 +24,7 @@ function createmainwrap(item) {
   <div class = "name">${item.name}</div><div class = "history"><br>상품설명<br><br>${item.history}</div><div class = "age"><br>가격 :  ${numbering}원</div>
   </div><div class = "damgii" onclick = "damgiibtn(${item.id})">담기</div></div>`;
 }
+
 function damgiibtn(item) {
   Swal.fire({
     title: "장바구니에 담을까요?",

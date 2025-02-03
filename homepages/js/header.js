@@ -10,18 +10,16 @@ function login() {
   });
 }
 
-const height = window.outerHeight;
-console.log(height);
-if (height >= 816) {
-  let header = document.querySelector(".header");
-  window.onscroll = function () {
-    let headerTop = header.offsetTop;
-    let sp = window.scrollY;
+// 스크롤시 헤더 고정
 
-    if (sp > headerTop) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
-    }
-  };
-}
+let header = document.querySelector(".header");
+window.onscroll = function () {
+  let headerTop = header.offsetTop;
+  let sp = window.scrollY;
+
+  if (sp > headerTop) {
+    header.classList.add("fixed");
+  } else {
+    header.classList.remove("fixed");
+  }
+};

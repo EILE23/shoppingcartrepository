@@ -8,7 +8,6 @@
 }
 
 .main-wrap {
-  max-width: 1280px;
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
@@ -28,8 +27,8 @@
 
 .box-wrap {
   background-color: rgb(230, 230, 230);
-  width: 90%;
   padding: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +63,7 @@
   background-color: black;
   color: white;
   padding: 15px;
-  border-radius: 18px;
+  border-radius: 8px;
   position: absolute;
   bottom: 40px;
   right: 100px;
@@ -77,18 +76,13 @@
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
-  .main-wrap {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .img {
     width: 100%; /* 이미지가 화면 크기에 맞게 확장 */
     max-width: 400px; /* 최대 크기 제한 */
   }
 
   .box-wrap {
-    padding: 50px; /* 여백을 줄여서 공간 확보 */
+    padding: 5px; /* 여백을 줄여서 공간 확보 */
     width: 95%; /* 화면 크기에 맞게 너비 조정 */
   }
 
@@ -119,11 +113,6 @@
   .img {
     width: 100%; /* 이미지 크기 화면에 맞게 */
     max-width: 350px; /* 화면 크기에 맞게 제한 */
-  }
-
-  .box-wrap {
-    padding: 30px; /* 여백 줄이기 */
-    width: 90%; /* 화면 크기에 맞게 너비 조정 */
   }
 
   .damgii {

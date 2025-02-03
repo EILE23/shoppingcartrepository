@@ -12,12 +12,12 @@ categorys.map((item) => {
   dropdownmenu.innerHTML += `<li onclick="clickcate('${item}')">${item}</li>`;
 });
 
+// 드롭다운 메뉴 클릭 함수 쿼리 주는 곳
 function clickcate(value) {
   window.location.href = `main.html?ct=${value}`;
 }
 
-let mnumber = shopping.length;
-console.log(mnumber);
+let mnumber = shopping.length; //배열의 길이 담아둔 변수 (굳이 안써도 됨)
 
 function createbox(data) {
   const mainwrap = document.querySelector(".main-container");
@@ -44,10 +44,10 @@ function createbox(data) {
 }
 
 function removeBtn(index) {
-  shopping.splice(index, 1);
+  shopping.splice(index, 1); //삭제버튼 클릭시 인덱스만큼 배열에서 제거
 
   window.localStorage.setItem("shopping", JSON.stringify(shopping));
-  //document.querySelector(`.box${saveData[index].id}`).remove();
+  //document.querySelector(`.box${saveData[index].id}`).remove(); 필요없음
 
   const Data = JSON.parse(window.localStorage.getItem("shopping"));
 
@@ -55,6 +55,7 @@ function removeBtn(index) {
 }
 
 function removeCart() {
+  //장바구니 비우기 버튼 클릭시 빈 배열로 만들고 로컬스트리지에 저장
   shopping = [];
   window.localStorage.setItem("shopping", JSON.stringify(shopping));
   createbox(shopping);
@@ -90,6 +91,7 @@ function payment() {
   });
 }
 
+// 장바구니 물품 카운트
 function plus(i) {
   const spanText = document.querySelector(`.sp${shopping[i].id}`);
   const divText = document.querySelector(`.price${shopping[i].id}`);
@@ -107,6 +109,7 @@ function minus(i) {
     spanText.innerHTML = `${shopping[i].cnt}`;
     divText.innerHTML = `${shopping[i].age * shopping[i].cnt}원`;
   } else {
+    //1개 미만으로 줄이지 못하도록
     alert("그만");
     return;
   }

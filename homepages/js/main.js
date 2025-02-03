@@ -1,7 +1,8 @@
 let saveData = JSON.parse(window.localStorage.getItem("data")) || [];
 let shoppingcart = JSON.parse(window.localStorage.getItem("shopping")) || [];
 const querydata = new URLSearchParams(window.location.search);
-const ct = querydata.get("ct");
+const ct = querydata.get("ct"); // 드롭다운 메뉴 쿼리값
+let toggle = true;
 
 const dropdownmenu = document.querySelector(".dropdownmenu");
 const btnbox = document.querySelector(".boxbtnbox");
@@ -23,15 +24,19 @@ categorys.map((item) => {
   )}">${item}</div>`;
 });
 
+// 드롭다운 메뉴 클릭시
 function clickcate(value) {
   window.location.href = `main.html?ct=${value}`;
 }
+
+// 버튼 클릭시
 function clickcate2(value) {
   createbox(saveData, value);
 }
 
-shoppingnum(shoppingcart.length);
+shoppingnum(shoppingcart.length); //페이지 로딩시 장바구니에 로컬스트리지에 담긴 배열의 길이로 숫자 표기
 
+// 데이터로 메뉴 만드는 함수 value는 table.js에서 카테고리 값을 의미
 function createbox(data, value) {
   const mainwrap = document.querySelector(".boxboxbox");
   mainwrap.innerHTML = ``;
@@ -39,10 +44,11 @@ function createbox(data, value) {
     if (value === "all") {
       data.map((item) => {
         let numbering = Number(item.age).toLocaleString();
-        mainwrap.innerHTML += `    <div class="test" onclick = "information(${item.id})">
-            <div class = "imgbox"><img src="${item.img}" alt="..." /></div>
-        <div>${item.name}</div>
-        <div>${numbering}원</div>
+        mainwrap.innerHTML += `    <div class="test">
+            <div class = "imgbox"><img onclick = "information(${item.id})" class = "itemimg"src="${item.img}" alt="..." /></div>
+        <div onclick = "information(${item.id})">${item.name}</div>
+        <div onclick = "information(${item.id})">${numbering}원</div><img onclick = "favorite(${item.id})"class = "hearticon hearticon${item.id}" src = "../daiso/hearticon.png" alt = "heart"/>
+      </div>
      `;
       });
       setTimeout(() => {
@@ -58,10 +64,12 @@ function createbox(data, value) {
       data.map((item) => {
         if (item.category == value) {
           let numbering = Number(item.age).toLocaleString();
-          mainwrap.innerHTML += `    <div class="test" onclick = "information(${item.id})">
-        <div class = "imgbox"><img src="${item.img}" alt="..." /></div>
-        <div>${item.name}</div>
-        <div>${numbering}원</div>
+          mainwrap.innerHTML += `    <div class="test" >
+        <div class = "imgbox"><img onclick = "information(${item.id})"  class = "itemimg" src="${item.img}" alt="..." /></div>
+        <div onclick = "information(${item.id})">${item.name}</div>
+        <div onclick = "information(${item.id})">${numbering}원</div>
+        <img onclick = "favorite(${item.id})"class = "hearticon hearticon${item.id}" data-filled="false" src = "../daiso/hearticon.png" alt = "heart"/>
+    </div>
      `;
         }
       });
@@ -72,21 +80,24 @@ function createbox(data, value) {
         if (btn && !btn.classList.contains("btnclick")) {
           btn.click();
         }
-      }, 0);
+      }, 0); // 드롭다운 메뉴에서 상세메뉴 누르면 버튼도 같이 활성화가 되도록 하는 장치
     }
   }
 }
+// 버튼 활성화
 const btnarr = document.querySelectorAll(".btn");
 
 btnarr.forEach((item) => {
   item.addEventListener("click", () => {
+    // 버튼을 클릭하면
     function btnclickimg() {
       btnarr.forEach((btn) => {
+        //위에 btnarr중에서 class btnclick을 모두 제거
         btn.classList.remove("btnclick");
       });
-      item.classList.add("btnclick");
+      item.classList.add("btnclick"); //클릭된 버튼만 class btnclick 추가
     }
-    btnclickimg();
+    btnclickimg(); // 함수 호출
   });
 });
 // function clickcate(value) {
@@ -95,13 +106,31 @@ btnarr.forEach((item) => {
 //   } else createbox(saveData, value);
 // }
 function information(content) {
-  window.location.href = `details.html?id=${content}`;
+  window.location.href = `details.html?id=${content}`; //정보 클릭시
 }
 
 function shoppingbtn() {
-  window.location.href = "shoppingcart.html";
+  window.location.href = "shoppingcart.html"; // 장바구니 버튼 클릭시
 }
 
 function shoppingnum(number) {
-  document.querySelector(".circlenum").innerText = `${number}`;
+  document.querySelector(".circlenum").innerText = `${number}`; //장바구니 넘버링
+}
+
+// heart 토글
+function favorite(id) {
+  const heartIcon = document.querySelector(`.hearticon${id}`);
+  const isFilled = heartIcon.getAttribute("data-filled") === "true";
+
+  if (isFilled) {
+    heartIcon.src = "../daiso/hearticon.png";
+    heartIcon.setAttribute("data-filled", "false");
+  } else {
+    heartIcon.src = "../daiso/hearticonfill.png";
+    heartIcon.setAttribute("data-filled", "true");
+  }
+}
+
+function reload() {
+  window.location.href = `main.html?ct=${"all"}`;
 }

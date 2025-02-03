@@ -3,15 +3,22 @@
   src: url("../font/BMJUA_ttf.ttf");
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: whitesmoke;
   overflow: auto;
+  width: 100%;
+  position: relative;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 .header {
   height: 60px;
-  width: calc(100% - 40px); /* 화면 좌우 여백 조정 */
-  max-width: 90%;
+  max-width: 1280px;
   width: 100%;
-  margin: 0 auto;
   padding: 15px 20px;
   background-color: black;
   color: white;
@@ -25,9 +32,8 @@ body {
   z-index: 999;
   font-family: "zua";
   top: 0;
-  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    max-width 0.5s ease-in-out;
   position: relative; /* 기본 상태 */
+  transition: top 0.5s ease-in-out, width 0.5s ease-in-out;
 }
 
 .header div {
@@ -85,14 +91,12 @@ body {
 /* fixed 상태 */
 .fixed {
   position: fixed;
+  width: 1280px;
   left: 50%;
   top: 5px;
   transform: translateX(-50%);
-  width: calc(100% - 40px); /* 화면 좌우 여백 맞추기 */
-  max-width: 1280px;
   opacity: 0.8;
-  transition: top 0.5s ease-in-out,
-    opacity 0.5s ease-in-out max-width 0.5s ease-in-out;
+  z-index: 999;
 }
 
 .dropdown {
@@ -132,7 +136,9 @@ li:hover {
   display: block;
   z-index: 999;
 }
-
+.gohome:hover {
+  cursor: pointer;
+}
 @media (max-width: 1180px) {
   .header {
     justify-content: space-around;
@@ -142,9 +148,8 @@ li:hover {
 /* 반응형 스타일 */
 @media (max-width: 768px) {
   .header {
-    padding: 10px 15px; /* 모바일에서 여백을 줄여서 화면 최적화 */
+    width: 120%;
     font-size: 20px; /* 작은 화면에서 폰트 크기 줄이기 */
-    align-items: center;
     justify-content: space-around;
   }
 

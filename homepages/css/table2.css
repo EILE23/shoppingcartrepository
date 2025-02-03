@@ -10,8 +10,8 @@
 .test {
   width: 200px;
   height: 230px;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: rgb(230, 230, 230);
+  color: rgb(0, 0, 0);
   border-radius: 16px;
   padding: 16px;
   display: flex;
@@ -19,23 +19,20 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  box-shadow: 5px 5px 3px #666;
+  /* box-shadow: 5px 5px 3px #666; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: "zua";
-}
-.test:hover {
-  cursor: pointer;
+  position: relative;
 }
 .test:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.test img {
+.test .itemimg {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 16px;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .test .imgbox {
@@ -43,10 +40,11 @@
   border-radius: 16px;
   overflow: hidden;
 }
-.test img:hover {
+.test .itemimg:hover {
   transform: scale(1.09);
+  cursor: grabbing;
 }
-.damgi {
+.test .damgi {
   background-color: white;
   color: black;
   border: none;
@@ -56,7 +54,19 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+.test .hearticon {
+  position: absolute;
+  width: 30px;
+  aspect-ratio: 1/1;
+  left: 10px;
+  bottom: 20px;
+}
+.test .hearticon:hover {
+  cursor: pointer;
+}
+.test div:hover {
+  cursor: pointer;
+}
 .damgi:hover {
   background-color: black;
   color: white;
