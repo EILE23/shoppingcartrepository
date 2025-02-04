@@ -4,6 +4,7 @@
 <br><br>
 
 ### 기술
+
 <span>
 <img src = "https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/>
   <img src = "https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
@@ -18,7 +19,7 @@
 
 #### 메인 페이지
 
-![alt text](./homepages/image/image-1.png)
+![alt text](./homepages/image/image.png)
 
 <br><br>
 
@@ -52,6 +53,7 @@
 
 ![alt text](./homepages/image/image-1.png)
 <br><br>
+
 #### 게시물 등록
 
 <br><br>
@@ -84,4 +86,3 @@
 
 <a href = "https://sweetalert2.github.io/"><img src = "./homepages/image/logo-square.png" width = "100" height = "100">
 </a>
-
