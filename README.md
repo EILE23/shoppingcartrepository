@@ -57,7 +57,7 @@
 
 #### 관리 페이지에서 카테고리에 따라 아이템 등록 카테고리 별로 정리 (카테고리 명은 코드 내에서 변경 가능)
 
-![alt text](./homepages/image/image-1.png)
+![alt text](./homepages/image/image.png)
 <br><br>
 
 #### 게시물 등록
