@@ -3,7 +3,7 @@ let shopping = JSON.parse(window.localStorage.getItem("shopping")) || [];
 
 createbox(shopping);
 
-// header
+// header 드롭다운 메뉴 생성되게
 const dropdownmenu = document.querySelector(".dropdownmenu");
 dropdownmenu.innerHTML = `<li onclick="clickcate('all')">전체</li>`;
 
@@ -19,6 +19,7 @@ function clickcate(value) {
 
 let mnumber = shopping.length; //배열의 길이 담아둔 변수 (굳이 안써도 됨)
 
+// 박스 만드는 함수
 function createbox(data) {
   const mainwrap = document.querySelector(".main-container");
   mainwrap.innerHTML = "";
@@ -65,6 +66,7 @@ function information(content) {
   window.location.href = `details.html?id=${content}`;
 }
 
+// 결제하기 버튼 클릭시
 function payment() {
   let price = 0;
   shopping.forEach((item) => {

@@ -289,10 +289,8 @@ function textprint(item) {
     historytext.classList.add("none");
     historytext.textContent = "";
   }
-
-  // console.log(localdata.id);
 }
-//includes(값) -> 값이 있는지 확인 가능 있으면 true 없으면 false => boolean ??
+//includes(값) -> 값이 있는지 확인 가능 있으면 true 없으면 false => boolean 반환
 // // // // // // // //
 
 // 데이터 넘겨주는 함수
@@ -326,7 +324,7 @@ function savedata() {
   const inputName = document.querySelector(".input-name").value;
   const inputAge = document.querySelector(".input-age").value;
   const inputHistory = document.querySelector(".input-history").value;
-  // const inputNickname = document.querySelector(".input-nickName").value;
+
   const inputarr = [inputID, inputName, inputAge, inputHistory];
   inputarr.forEach((item, i) => {
     if (item === "") {

@@ -25,6 +25,7 @@ function createmainwrap(item) {
   </div><div class = "damgii" onclick = "damgiibtn(${item.id})">담기</div></div>`;
 }
 
+// 담기 버튼 클릭시
 function damgiibtn(item) {
   Swal.fire({
     title: "장바구니에 담을까요?",
@@ -43,7 +44,7 @@ function damgiibtn(item) {
 
       let exist = false;
 
-      // 카트에 담겨 있을경우
+      //if 중복
       shoppingcart.map((x) => {
         if (x.id == item) {
           exist = true;
@@ -51,7 +52,7 @@ function damgiibtn(item) {
         }
       });
       if (!exist) {
-        //초기 생성 이면
+        //if 초기생성
         let dataid = "";
 
         saveData.map((search) => {

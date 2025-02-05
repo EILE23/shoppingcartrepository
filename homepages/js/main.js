@@ -2,7 +2,6 @@ let saveData = JSON.parse(window.localStorage.getItem("data")) || [];
 let shoppingcart = JSON.parse(window.localStorage.getItem("shopping")) || [];
 const querydata = new URLSearchParams(window.location.search);
 const ct = querydata.get("ct"); // 드롭다운 메뉴 쿼리값
-let toggle = true;
 
 const dropdownmenu = document.querySelector(".dropdownmenu");
 const btnbox = document.querySelector(".boxbtnbox");
@@ -14,7 +13,7 @@ else {
   const mainwrap = document.querySelector(".boxbox");
   mainwrap.innerHTML = `데이터가 없어요`;
 }
-// new Set 배열에서 이미 포함이 되어있는 아이템이면 그 다음부터 담지 않는 기능
+// new Set  => 배열에서 이미 포함이 되어있는 아이템이면 그 다음부터 담지 않는 메서드
 let categorys = [...new Set(saveData.map((item) => item.category))];
 categorys.map((item) => {
   dropdownmenu.innerHTML += `<li onclick="clickcate('${item}')">${item}</li>`;
@@ -56,7 +55,7 @@ function createbox(data, value) {
           document.querySelector(`.bt${"all"}`) &&
           !document.querySelector(`.bt${"all"}`).classList.contains("btnclick")
         ) {
-          document.querySelector(`.bt${"all"}`).click();
+          document.querySelector(`.bt${"all"}`).click(); //click 강제로 먹여서 드롭다운 메뉴로 페이지 들어오면 버튼 클릭된거 처럼 보이기
         }
       }, 0);
     } else if (value !== "all") {
