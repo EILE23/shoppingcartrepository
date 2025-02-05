@@ -50,6 +50,11 @@
 <hr>
 
 ### **기능**
+<br><br>
+
+![image](https://github.com/user-attachments/assets/2da2f450-0c33-4cbc-b3b1-30ad5c5a2a44)
+
+#### 관리 페이지에서 csv 파일 다운로드
 
 <br><br>
 
