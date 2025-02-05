@@ -66,10 +66,7 @@ function createtable(content) {
 // 그 history 박스 안에 input 생성후 input안에 기존 history값 넣은 뒤 keydown enter 하면 값이 들어가도록..??
 
 // // // // // // // 삭제
-// function rename(item) {
-//   const rename = item;
-//   rename.textContent = "수정완료?";
-// }
+
 function remove(content) {
   saveData.map((item, i) => {
     if (item.id == content) {
@@ -89,7 +86,7 @@ function cord(item) {
   const inhis = document.querySelector(`.inhis${item}`);
   const btnid1 = document.querySelector(`.buttons${item}`);
   const btnid2 = document.querySelector(`.buttonr${item}`);
-  console.log(inname.value, inage.value, inhis.value, tdname, tdage, tdhis);
+
   const localdata = JSON.parse(window.localStorage.getItem("data"));
   let dataid = "";
   localdata.map((cem) => {
@@ -157,7 +154,7 @@ function cor(item) {
       dataid = cem;
     }
   });
-  console.log(dataid);
+
   tdname.innerHTML = `<input class = "ininput inname${item}"value = "${dataid.name}" )"><p></p>`;
   tdage.innerHTML = `<input type = "number" oninput = "onlynumber(${item},'age')" class = "ininput inage${item}" value = "${dataid.age}"><p class = "page${item}"></p>`;
   tdhis.innerHTML = `<input class = "ininput inhis${item}" oninput = "onlynumber(${item}, 'his')" value = "${dataid.history}"><p class = "phis${item}"></p>`;
@@ -298,9 +295,10 @@ function textprint(item) {
 //includes(값) -> 값이 있는지 확인 가능 있으면 true 없으면 false => boolean ??
 // // // // // // // //
 
+// 데이터 넘겨주는 함수
 function saveddata(inputID, inputName, inputAge, inputHistory, inputcategory) {
   // const saveData = window.localStorage.getItem("savedata");
-  randomnum = Math.floor(Math.random() * 16);
+  randomnum = Math.floor(Math.random() * 16); //
 
   const Datasave = {
     id: inputID,
@@ -321,8 +319,7 @@ function saveddata(inputID, inputName, inputAge, inputHistory, inputcategory) {
   createtable(localdata);
 }
 
-// // // 함수별 분류 // // // //
-
+// 데이터 버튼 클릭시
 function savedata() {
   let open = false;
   const inputID = document.querySelector(".input-id").value;
@@ -362,7 +359,7 @@ function savedata() {
       if (item.id === Number(inputID)) {
         idtext.classList.remove("none");
         idtext.textContent = "중복 아이디입니다.";
-        setTimeout(nonetext, 3000);
+        setTimeout(nonetext, 3000); //3초간만 나타나게
         open = true;
       }
     });
@@ -375,7 +372,7 @@ function savedata() {
       'input[name="A"]:checked'
     ).value;
     console.log(inputcategory);
-    saveddata(inputID, inputName, inputAge, inputHistory, inputcategory);
+    saveddata(inputID, inputName, inputAge, inputHistory, inputcategory); //데이터 담아서 다른 함수로 넘겨줌
     document.querySelector(".input-id").value = "";
     document.querySelector(".input-name").value = "";
     document.querySelector(".input-age").value = "";
@@ -383,6 +380,7 @@ function savedata() {
     document.querySelector(".buttonc").disabled = true;
   }
 }
+// 등록 버튼 클릭시
 function loocation() {
   window.location.href = `main.html?ct=${"all"}`;
 }

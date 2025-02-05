@@ -30,16 +30,15 @@ body::-webkit-scrollbar {
   font-weight: bolder;
   z-index: 999;
   font-family: "zua";
-  top: 0;
-  position: relative; /* 기본 상태 */
+  top: 10;
   transition: top 0.5s ease-in-out, width 0.5s ease-in-out;
-  position: fixed;
+  /* position: fixed;
   width: 100%;
   left: 50%;
   top: -5px;
   transform: translateX(-50%);
   opacity: 0.8;
-  z-index: 999;
+  z-index: 999; */
 }
 
 .header div {
@@ -95,15 +94,15 @@ body::-webkit-scrollbar {
 }
 
 /* fixed 상태 */
-/* .fixed {
+.fixed {
   position: fixed;
   width: 100%;
   left: 50%;
-  top: -5px;
+  top: 0;
   transform: translateX(-50%);
   opacity: 0.8;
   z-index: 999;
-}  */
+}
 
 .dropdown {
   position: relative;
