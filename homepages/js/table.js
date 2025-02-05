@@ -382,3 +382,58 @@ function savedata() {
 function loocation() {
   window.location.href = `main.html?ct=${"all"}`;
 }
+
+function downloadCSV() {
+  // var array = [];
+  // array.push({name:"name1", age: 20, test: "test1"});
+  // array.push({name:"name2", age: 22, test: "test2"});
+  // array.push({name:"name3", age: 24, test: "test3"});
+
+  var a = "";
+  // $.each(array, function(i, item){
+  //   a += item.name + "," + item.age + "," + item.test + "\r\n";
+  // });
+
+  // jquery 사용하지 않는 경우
+  a +=
+    "ID" +
+    "," +
+    "name" +
+    "," +
+    "price" +
+    "," +
+    "상세설명" +
+    "," +
+    "이미지 경로" +
+    "," +
+    "카테고리" +
+    "\r\n";
+  if (saveData.length > 0) {
+    for (var i = 0; i < saveData.length; i++) {
+      a +=
+        saveData[i].id +
+        "," +
+        saveData[i].name +
+        "," +
+        saveData[i].age +
+        "," +
+        saveData[i].history +
+        "," +
+        saveData[i].img +
+        "," +
+        saveData[i].category +
+        "\r\n";
+    }
+  } else {
+    a += "데이터가 없습니다" + ",";
+  }
+  var downloadLink = document.createElement("a");
+  var blob = new Blob([a], { type: "text/csv;charset=utf-8" });
+  var url = URL.createObjectURL(blob);
+  downloadLink.href = url;
+  downloadLink.download = "메뉴 데이터.csv";
+
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}

@@ -51,6 +51,8 @@ function damgiibtn(item) {
           x.cnt += 1;
         }
       });
+
+      
       if (!exist) {
         //if 초기생성
         let dataid = "";
