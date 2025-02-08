@@ -109,6 +109,7 @@
   padding: 100px;
   border-radius: 24px !important;
   width: 100%;
+  position: relative;
 }
 .boxboxbox {
   display: grid;
@@ -147,6 +148,26 @@
   background-color: black;
   color: white;
 }
+.pageBox {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 10px;
+}
+.pageBtninbox {
+  display: flex;
+  gap: 5px;
+}
+.pageBtnn {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.pageBtnn:hover {
+  cursor: pointer;
+}
 @media (max-width: 1280px) {
   .test {
     width: 200px;
@@ -170,7 +191,7 @@
   }
   .boxboxbox {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4개씩 정렬 */
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 정렬 */
     gap: 20px; /* 간격 조절 */
     max-width: 1280px;
     margin: 0 auto; /* 가운데 정렬 */
@@ -186,7 +207,7 @@
   }
   .boxboxbox {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 4개씩 정렬 */
+    grid-template-columns: repeat(2, 1fr); /* 2개씩 정렬 */
     gap: 20px; /* 간격 조절 */
     max-width: 1280px;
     margin: 0 auto; /* 가운데 정렬 */

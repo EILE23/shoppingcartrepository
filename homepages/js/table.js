@@ -170,12 +170,14 @@ const idtext = document.querySelector(".id-text");
 const agetext = document.querySelector(".age-text");
 const nametext = document.querySelector(".name-text");
 const historytext = document.querySelector(".history-text");
+
 function nonetext() {
   idtext.classList.add("none");
   agetext.classList.add("none");
   nametext.classList.add("none");
   historytext.classList.add("none");
 }
+
 const textarr = [idtext, nametext, agetext, historytext];
 
 // // // // // // // //
