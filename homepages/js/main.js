@@ -2,24 +2,29 @@ let saveData = JSON.parse(window.localStorage.getItem("data")) || [];
 let shoppingcart = JSON.parse(window.localStorage.getItem("shopping")) || [];
 const querydata = new URLSearchParams(window.location.search);
 const ct = querydata.get("ct"); // 드롭다운 메뉴 쿼리값
-let saveBox = [];
 let pageNumber = 1;
+let pageGroup = 5;
+let dataBox = [];
+let BTN = "";
 
 const dropdownmenu = document.querySelector(".dropdownmenu");
 const btnbox = document.querySelector(".boxbtnbox");
-dropdownmenu.innerHTML = `<li onclick="clickcate('all')">전체</li>`;
+dropdownmenu.innerHTML = `<li onclick="clickcate2('all')">전체</li>`;
 btnbox.innerHTML = `<div onclick="clickcate2('all')" class = "btn bt${"all"}">all</div>`;
 const categorys = ["생필품", "사무용품", "문구팬시", "주방용품"];
 
 window.onload = function () {
-  // if (ct) {
-  //   clickcate2(ct);
-  // }
-  pagination(saveData);
+  if (ct) {
+    clickcate2(ct);
+  } else {
+    clickcate2("all");
+  }
+  shoppingnum();
 };
+
 categorys.map((item) => {
-  btnbox.innerHTML += `<div onclick="clickcate2(${item})" class = "btn bt${item}">${item}</div>`;
-  dropdownmenu.innerHTML += `<li onclick = "clickcate(${item})">${item}</li>`;
+  btnbox.innerHTML += `<div onclick="clickcate2('${item}')" class = "btn bt${item}">${item}</div>`;
+  dropdownmenu.innerHTML += `<li onclick = "clickcate2('${item}')">${item}</li>`;
 });
 
 function createbox(data) {
@@ -39,32 +44,90 @@ function createbox(data) {
   }
 }
 
-function createPage(num) {}
-
-let dataBox = [];
-const pagination = (data, value) => {
-  dataBox = [];
-  let number = 0;
+const pagination = (data, pageNumber) => {
+  let number = (pageNumber - 1) * 10;
   let total = Math.ceil(data.length / 10);
-  let group = Math.ceil(total / 5);
-  let current = Math.ceil(group / current);
+  let group = Math.ceil(total / pageGroup);
+  let current = Math.ceil(pageNumber / pageGroup);
 
-  let page = 1;
-  let start = (group - current) * 5 + 1;
-  let end = Math.min(group * 5, total);
+  let start = (current - 1) * 5 + 1;
+  let end = current * 5 < total ? current * 5 : total;
 
   if (data.length > 10) {
-    for (let i = 1; i <= total; i++) {
-      if (total !== i) {
-        dataBox[i - 1] = data.slice(number, 10);
-      } else {
-        dataBox[i - 1] = data.slice(number);
-      }
-    }
+    document.querySelector(".pageBox").style.display = "flex";
+    const pageData = data.slice(number, number + 10);
+    createbox(pageData);
   } else {
-    document.querySelector(".pageBox").display = "none";
+    document.querySelector(".pageBox").style.display = "none";
     createbox(data);
   }
 
-  console.log(dataBox);
+  const pageBox = document.querySelector(".pageBtninbox");
+
+  pageBox.innerHTML = "";
+
+  for (let i = start; i <= end; i++) {
+    pageBox.innerHTML += `<span onclick = "numberclick(${i})" class = "pageBtnn">${i}</span>`;
+  }
+
+  if (current === 1) {
+    document.querySelector(".pageLeft").disabled = true;
+  } else {
+    document.querySelector(".pageLeft").disabled = false;
+  }
+  if (current === group) {
+    document.querySelector(".pageRight").disabled = true;
+  } else {
+    document.querySelector(".pageRight").disabled = false;
+  }
 };
+
+function pageLeft() {
+  pageNumber -= 1;
+  numberclick(pageNumber);
+}
+
+function pageRight() {
+  pageNumber += 1;
+  numberclick(pageNumber);
+}
+
+function clickcate2(category) {
+  pageNumber = 1;
+  if (category === "all") {
+    dataBox = saveData;
+  } else {
+    dataBox = saveData.filter((item) => item.category === category);
+  }
+  BTN = category;
+  pagination(dataBox, pageNumber);
+  const btnBox = document.querySelectorAll(".btn");
+  btnBox.forEach((item) => item.classList.remove("btnclick"));
+  document.querySelector(`.bt${category}`).classList.add("btnclick");
+}
+
+function numberclick(num) {
+  pageNumber = num;
+  if (BTN === "all") {
+    pagination(saveData, pageNumber);
+  } else {
+    dataBox = saveData.filter((item) => item.category === BTN);
+    pagination(dataBox, pageNumber);
+  }
+}
+
+function shoppingnum() {
+  document.querySelector(".circlenum").innerText =
+    `${shoppingcart.length}` || 0;
+}
+
+function information(item) {
+  window.location.href = `details.html?id=${item}`;
+}
+
+function shoppingbtn() {
+  window.location.href = "shoppingcart.html";
+}
+function reload() {
+  window.scrollTo(0, 0);
+}
