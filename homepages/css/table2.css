@@ -162,8 +162,10 @@
 }
 .pageBtnn {
   font-size: 14px;
-  font-weight: bold;
   text-align: center;
+}
+.pageBtnC {
+  font-weight: bold;
 }
 .pageBtnn:hover {
   cursor: pointer;

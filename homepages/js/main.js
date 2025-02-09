@@ -41,14 +41,16 @@ function createbox(data) {
       </div>
      `;
     });
+  } else {
+    mainwrap.innerHTML = `<div>데이터가 없어요</div>`;
   }
 }
 
 const pagination = (data, pageNumber) => {
-  let number = (pageNumber - 1) * 10;
-  let total = Math.ceil(data.length / 10);
-  let group = Math.ceil(total / pageGroup);
-  let current = Math.ceil(pageNumber / pageGroup);
+  let number = (pageNumber - 1) * 10; //현재 페이지가 2면 index 10부터 +10개 까지 되도록
+  let total = Math.ceil(data.length / 10); // data가 61개면 71페이지
+  let group = Math.ceil(total / pageGroup); // data가 77개면 8/5 -> 최대 그룹 2
+  let current = Math.ceil(pageNumber / pageGroup); // ex 현재 페이지 8 pageBtn은 5개씩이니 8/5 = 1.333333 -> 2
 
   let start = (current - 1) * 5 + 1;
   let end = current * 5 < total ? current * 5 : total;
@@ -67,7 +69,7 @@ const pagination = (data, pageNumber) => {
   pageBox.innerHTML = "";
 
   for (let i = start; i <= end; i++) {
-    pageBox.innerHTML += `<span onclick = "numberclick(${i})" class = "pageBtnn">${i}</span>`;
+    pageBox.innerHTML += `<span onclick = "numberclick(${i})" class = "pageBtnn pageBtn${i}">${i}</span>`;
   }
 
   if (current === 1) {
@@ -80,15 +82,20 @@ const pagination = (data, pageNumber) => {
   } else {
     document.querySelector(".pageRight").disabled = false;
   }
+  const btnB = document.querySelectorAll(".pageBtnn");
+  btnB.forEach((item) => item.classList.remove("pageBtnC"));
+  document.querySelector(`.pageBtn${pageNumber}`).classList.add("pageBtnC");
 };
 
 function pageLeft() {
-  pageNumber -= 1;
+  pageNumber -= pageGroup;
   numberclick(pageNumber);
 }
 
 function pageRight() {
-  pageNumber += 1;
+  const total = dataBox.length / 10;
+  pageNumber =
+    pageNumber + pageGroup < total ? pageNumber + pageGroup : pageGroup + 1;
   numberclick(pageNumber);
 }
 
