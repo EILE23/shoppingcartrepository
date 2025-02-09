@@ -386,17 +386,7 @@ function loocation() {
 }
 
 function downloadCSV() {
-  // var array = [];
-  // array.push({name:"name1", age: 20, test: "test1"});
-  // array.push({name:"name2", age: 22, test: "test2"});
-  // array.push({name:"name3", age: 24, test: "test3"});
-
   var a = "";
-  // $.each(array, function(i, item){
-  //   a += item.name + "," + item.age + "," + item.test + "\r\n";
-  // });
-
-  // jquery 사용하지 않는 경우
   a +=
     "ID" +
     "," +
@@ -429,13 +419,17 @@ function downloadCSV() {
   } else {
     a += "데이터가 없습니다" + ",";
   }
-  var downloadLink = document.createElement("a");
-  var blob = new Blob([a], { type: "text/csv;charset=utf-8" });
-  var url = URL.createObjectURL(blob);
-  downloadLink.href = url;
-  downloadLink.download = "메뉴 데이터.csv";
+  var downloadLink = document.createElement("a"); //요소가 생성이 되는 박스
+  var blob = new Blob([a], { type: "text/csv;charset=utf-8" }); //Blob?? 형식 파일로 변환
+  var url = URL.createObjectURL(blob); //type이 지정된 Blob 형식의 파일을 url로 만듬
+  downloadLink.href = url; //다운로드 링크의 url은 url
+  downloadLink.download = "메뉴 데이터.csv"; //파일 이름
 
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  document.body.removeChild(downloadLink);
+  document.body.appendChild(downloadLink); //링크를 a태그 첫번째 요소로 추가
+  downloadLink.click(); //강제 클릭 시키기
+  document.body.removeChild(downloadLink); //제거
 }
+
+//요소를 문자열로 넣고 쉼표로 구분
+//구분되어 있는 데이터를 파일 변환시 해당 열에 추가
+//아마 줄바꿈도 적용이 되는듯

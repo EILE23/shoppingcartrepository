@@ -47,10 +47,10 @@ function createbox(data) {
 }
 
 const pagination = (data, pageNumber) => {
-  let number = (pageNumber - 1) * 10; //현재 페이지가 2면 index 10부터 +10개 까지 되도록
-  let total = Math.ceil(data.length / 10); // data가 61개면 71페이지
-  let group = Math.ceil(total / pageGroup); // data가 77개면 8/5 -> 최대 그룹 2
-  let current = Math.ceil(pageNumber / pageGroup); // ex 현재 페이지 8 pageBtn은 5개씩이니 8/5 = 1.333333 -> 2
+  let number = (pageNumber - 1) * 10;
+  let total = Math.ceil(data.length / 10);
+  let group = Math.ceil(total / pageGroup);
+  let current = Math.ceil(pageNumber / pageGroup);
 
   let start = (current - 1) * 5 + 1;
   let end = current * 5 < total ? current * 5 : total;
@@ -88,7 +88,8 @@ const pagination = (data, pageNumber) => {
 };
 
 function pageLeft() {
-  pageNumber -= pageGroup;
+  pageNumber -= 5;
+  pageNumber = Math.ceil(pageNumber / pageGroup) * 5 - 4;
   numberclick(pageNumber);
 }
 
