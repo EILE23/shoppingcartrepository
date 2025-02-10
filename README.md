@@ -65,6 +65,9 @@
 ![alt text](./homepages/image/image.png)
 <br><br>
 
+#### 페이지네이션
+![image](https://github.com/user-attachments/assets/c014ad2b-a667-4b90-8885-49042b57c834)
+<br><br>
 #### 게시물 등록
 
 <br><br>
